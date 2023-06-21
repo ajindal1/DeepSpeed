@@ -630,7 +630,7 @@ class DeepSpeedZeRoOffload(object):
                 input_and_output.append(o)
             # input_tensors, packed_non_tensors = split_non_tensors(input)
             a = ORTPostForwardwardFunction.apply(module, _post_forward_module_hook, _ort_run_before_backward_function, len(input), len(output), *input_and_output)
-            print("exit _ort_post_forward_module_hook", module, module.training)
+            # print("exit _ort_post_forward_module_hook", module, module.training)
             return a
             # if isinstance(outputs, torch.Tensor) and not isinstance(a, torch.Tensor):
             #     print(a)
